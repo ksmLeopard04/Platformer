@@ -23,4 +23,11 @@ public class PlayerFeet : MonoBehaviour
             PlayerController.isGrounded = true;
         }
     }
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Ground")
+        {
+            PlayerController.isGrounded = false;
+        }
+    }
 }

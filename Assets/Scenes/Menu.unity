@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8bc76eadd5404c4180e65ba6fe109a3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2203cf3290e86c8469bedfc1d349a930, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1082,6 +1082,7 @@ GameObject:
   - component: {fileID: 1293330035}
   - component: {fileID: 1293330034}
   - component: {fileID: 1293330037}
+  - component: {fileID: 1293330038}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1189,6 +1190,18 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1293330038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293330033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df076957846cd74787b7a8215dbbad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1308631155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,7 +1260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Abyss Adventure
+  m_text: Day And Knight
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1504,6 +1517,7 @@ GameObject:
   - component: {fileID: 1909427521}
   - component: {fileID: 1909427523}
   - component: {fileID: 1909427522}
+  - component: {fileID: 1909427524}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1551,13 +1565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to Abyss Adventure, a minimalist platformer game where you'll take
-    control of a lone adventurer and journey through a series of levels. With no
-    enemies or obstacles to hold you back, your only goal is to run, jump, and explore
-    your way to the end of each level. With intuitive controls, and smooth gameplay,
-    Abyss Adventure offers a simple yet engaging platforming experience that's perfect
-    for a quick gaming session or a peaceful moment of escape. So get ready to take
-    on the challenge and see how far you can go!
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1584,7 +1592,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.65
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1634,6 +1642,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909427520}
   m_CullTransparentMesh: 1
+--- !u!114 &1909427524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909427520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea9c3e2963996646bf6e4b923488f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1938155917
 GameObject:
   m_ObjectHideFlags: 0

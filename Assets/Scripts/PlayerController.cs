@@ -1,27 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 5;
+    [SerializeField] float movementSpeed = 6;
     [SerializeField]GameSceneManager GameSceneManager;
     [SerializeField] Animator animator;
     private Rigidbody2D rb;
-    private BoxCollider2D boxCollider;
     private Vector2 move;
     private float jumpforce = 8f;
     private bool jumping = false;
-    public static bool gameOver;
     public static bool isGrounded = false;
+    public static bool timeRecorded = false;
     bool facingRight = true;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -31,19 +29,21 @@ public class PlayerController : MonoBehaviour
         {
             move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
-        if(move.x == 0)
+        if(move.x > 0 && !facingRight)
+        {
+            Flip();
+        }
+        if(move.x < 0 && facingRight)
+        {
+            Flip();
+        }
+        if(Mathf.Abs(move.x) > 0.1 && isGrounded == true)
+        {
+            animator.SetBool("moving", true);
+        }
+        else
         {
             animator.SetBool("moving", false);
-        }
-        if(move.x > 0 && !facingRight && isGrounded == true)
-        {
-            animator.SetBool("moving", true);
-            Flip();
-        }
-        if(move.x < 0 && facingRight && isGrounded == true)
-        {
-            animator.SetBool("moving", true);
-            Flip();
         }
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
@@ -74,5 +74,17 @@ public class PlayerController : MonoBehaviour
 
 
         facingRight = !facingRight;
+    }
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Checkpoint")
+        {
+            GameSceneManager.LoadLevelTwo();
+        }
+        if(col.gameObject.tag == "Finish")
+        {
+            GameSceneManager.gameOver = true;
+            GameSceneManager.LoadMenu();
+        }
     }
 }
